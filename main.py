@@ -1,4 +1,8 @@
 
+##next steps : 
+# store data in a csv file for retrieval 
+# clean up cmd input flow 
+
 
 
 def elo_ranking(A,B,Sa,Sb):
