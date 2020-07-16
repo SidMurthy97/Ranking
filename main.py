@@ -1,13 +1,9 @@
 
 
 
-def elo_ranking(A,B):
+def elo_ranking(A,B,Sa,Sb):
 
     k = 32 # K factor
-
-    #hardcode outcome for now, A wins against B 
-    Sa = 1
-    Sb = 0
 
     Ea = 1/(1 + 10**((B - A )/400)) #expected score for A 
     Eb = 1/(1 + 10**((A - B)/400)) #expected score for B
@@ -25,6 +21,9 @@ if __name__ == '__main__':
     
     players = []
 
+    A = 900
+    B = 1100
+
     for i in range(5):
         
         player1 = input("Player1: ")
@@ -41,12 +40,9 @@ if __name__ == '__main__':
             players.append(player2)
             print("added ",player2," to the known players list")
 
-        
+        result_str = input("Enter results: ")
+        outcome = result_str.split(",")
 
+        A,B = elo_ranking(A,B,int(outcome[0]),int(outcome[1]))
+        print(A,B)
 
-        # a = 900
-        # b = 1100
-
-        # for i in range(10):
-        #     a,b = elo_ranking(a,b)
-        #     print(i,a,b)
